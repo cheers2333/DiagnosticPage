@@ -1,0 +1,310 @@
+.div_table{
+    width: 100%;
+    height:calc(100% - 90px);
+    .ant-table-wrapper{
+        height: calc(100% - 41px);
+    }
+    .ant-spin-nested-loading .ant-spin-container .ant-table{
+        height: 100%;
+    }
+}
+
+//表格暂无数据
+.ant-table-placeholder{
+    margin-top: -70px;
+}
+
+//固定列样式--开始
+.ant-table-fixed-left{
+    height: calc(100% - 15px);
+    overflow-x: hidden;
+    .ant-table-header th{
+        padding: 4px 8px!important;
+        height: 19px!important;
+    }
+    .ant-table-body-outer{
+        height: calc(100% - 30px);
+        .ant-table-body-inner{
+            overflow-x: hidden;
+        }
+        td{
+            padding: 4px 8px!important;
+            height: 19px!important;
+        }
+    }
+}
+//固定列样式--结束
+
+//带滚动条的页面样式设置--开始
+.div_frame_main_scroll{
+    width: 100%;
+    height:100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    .div_search_main{
+        height: auto;
+    }
+    .ant-table-body table{
+        display: inline-table;
+        input[type='checkbox'] {
+            width: 17px;
+            height: 17px;
+        }
+    }
+    .div_tabTpl_main{
+        height: 336px!important;
+    }
+    .ant-spin-nested-loading{
+        height:100%;
+        .ant-spin-container{
+            height:100%;
+            .ant-table{
+                height:100%;
+                .ant-table-content{
+                    height:100%;
+                    .ant-table-scroll{
+                        height:100%;
+                        .ant-table-body{
+                            height: 320px !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // 修改通用模版去掉table内滚动，使内容自动适应
+    .div_tabTpl_main_custom{
+        margin-top: 16px;
+        .ant-table-wrapper{
+            .ant-spin-nested-loading{
+                height:100%;
+                .ant-spin-container{
+                    height:100%;
+                    .ant-table{
+                        height:100%;
+                        .ant-table-content{
+                            height:100%;
+                            .ant-table-scroll{
+                                height:100%;
+                                .ant-table-body{
+                                    height: 100% !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//带滚动条的页面样式设置--结束
+
+
+//无分页情况表格样式--开始
+.div_table_noPpage{
+    width: 100%;
+    height:calc(100% - 90px);
+    .ant-table-wrapper{
+        height: 100%;
+    }
+    .ant-spin-nested-loading .ant-spin-container .ant-table{
+        height: 100%;
+    }
+}
+//无分页情况表格样式--结束
+
+
+// 隔行变色--开始
+.ant-table-content tr.ant-table-row:nth-child(odd){
+    background: #FFFFFF;
+}
+.ant-table-content tr.ant-table-row:nth-child(even){
+    background:#F9FAFB;
+}
+// 隔行变色--结束
+
+// 表头背景颜色设置--开始
+thead.ant-table-thead > tr > th{
+    background: #F1F4F6 !important;
+}
+// 表头背景颜色设置--结束
+
+//表格选中颜色开始
+.ant-table-row-selected td{
+    background: #FFF5E1 !important;
+}
+//表格选中颜色结束
+
+//分页样式设置--开始
+.ant-pagination{
+    // border-top:1px solid #e6e6e6;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: right;
+    padding: 8px;
+    background: #fff;
+    margin: 0 !important;
+}
+//分页样式设置--结束
+
+//解决表格的size="small"最后一行的td无border-bottom开始
+.ant-table-small > .ant-table-content .ant-table-row:last-child td {
+    border-bottom: 1px solid #e8e8e8;
+}
+//解决表格的size="small"最后一行的td无border-bottom结束
+
+.ant-spin-nested-loading{
+    height:100%;
+    .ant-table-body table{
+        display: inline-table;
+        input[type='checkbox'] {
+            width: 17px;
+            height: 17px;
+        }
+    }
+    .ant-spin-container::after {//解决表格在ie11以下不能选中
+        position: inherit!important;
+    }
+    .ant-spin-container{
+        height:100%;
+        .ant-table{
+            height:100%;
+            .ant-table-content{
+                height:100%;
+                .ant-table-scroll{
+                    height:100%;
+                    .ant-table-body{
+                        min-height: 190px;
+                        height: calc(100% - 31px) !important;
+                        //设置table文字过多显示省略号
+                        th,td{
+                            max-width: 10px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+                .ant-table-fixed-left{
+                    .ant-table-body-outer{
+                        th,td{
+                            max-width: 10px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//通用模版--带tabs
+.div_tabTpl_main{
+    height: calc(100% - 151px);
+    margin-top: 16px;
+    .ant-tabs{height: 100%}
+    .ant-tabs-content{
+        height: calc(100% - 40px);
+        background: #FFFFFF;
+        .ant-tabs-tabpane{
+            height: 100%;
+            .div_tabTpl{
+                height: 100%;
+                .div_table{
+                    height: calc(100% - 41px);
+                    .ant-table-wrapper{
+                        height: 100%;
+                        //通用模版tab页下空数据不显示“暂无数据”
+                        .ant-table-placeholder {
+                            margin-top: -65px;
+                            // position: fixed;
+                            // bottom: 57px;
+                            // left: 50%;  
+                            // transform: translate(50%, 0%); 
+                            // padding: 0px 16px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+//表格两行标题设置高度
+.dbl_table_title {
+    .ant-spin-nested-loading {
+        .ant-spin-container {
+            .ant-table {
+                .ant-table-content {
+                    .ant-table-scroll {
+                        .ant-table-body{
+                            height: calc(100% - 60px) !important;
+                        }
+                    }
+                }
+            }
+        }
+    } 
+}
+
+.ant-table-fixed{
+    min-height: 1px;
+}
+
+.ant-table-scroll{
+    overflow: inherit !important;
+    .ant-table-thead > tr > th, .ant-table-tbody > tr > td {
+        padding: 5px 8px !important;
+        font-size: 13px;
+    }
+}
+.ant-pagination-prev .ant-pagination-item-link{
+    border:0 !important
+}
+
+//可编辑表格--开始
+.editable-cell {
+    position: relative;
+    .ant-input{height: 24px;line-height: 22px;padding: 0px 5px;}
+    .ant-select{width: 100%;}
+}
+.editable-cell-input-wrapper,
+.editable-cell-text-wrapper {
+    padding-right: 0px;
+}
+.editable-cell-text-wrapper {
+    padding: 5px 24px 5px 5px;
+    height: 20px;
+    line-height: 10px;
+}
+.editable-cell-input-wrapper{
+    height: auto;
+    line-height: 20px;
+}
+.editable-cell-icon,
+.editable-cell-icon-check {
+    position: absolute;
+    line-height: 20px;
+    right: 0;
+    top: 6%;
+    width: 20px;
+    cursor: pointer;
+}
+.editable-cell-icon {
+    line-height: 18px;
+    display: none;
+}
+.editable-cell-icon-check {
+    line-height: 28px;
+}
+.editable-cell:hover .editable-cell-icon {
+    display: inline-block;
+}
+.editable-cell-icon:hover,
+.editable-cell-icon-check:hover {
+    color: #108ee9;
+}
+.editable-add-btn {
+    margin-bottom: 8px;
+}
+//可编辑表格--结束
