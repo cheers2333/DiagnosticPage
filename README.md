@@ -1,6 +1,6 @@
-# diagnose-project
-
-## Project setup
+＃诊断项目
+诊断页面
+##项目设置
 ```
 yarn install
 ```
